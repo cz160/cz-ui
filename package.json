@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/cz160/cz-ui.git",
   "author": "竹合",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
