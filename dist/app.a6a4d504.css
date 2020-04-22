@@ -1,3 +1,11 @@
+@keyframes spin-data-v-0bb581 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
 .cz-button[data-v-0bb581] {
   font: inherit;
   padding: 0 0.7em;
@@ -33,6 +41,9 @@
   order: 2;
   margin-left: 0.1em;
   margin-right: 0;
+}
+.cz-button .loading[data-v-0bb581] {
+  animation: spin-data-v-0bb581 2s infinite linear;
 }
 .icon[data-v-885966] {
   width: 1em;

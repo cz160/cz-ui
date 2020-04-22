@@ -1,6 +1,11 @@
 <template>
-  <button class="cz-button" :class="{[`icon-${iconPosition}`]:true}">
-    <cz-icon :name="icon"></cz-icon>
+  <button 
+    class="cz-button" 
+    :class="{[`icon-${iconPosition}`]:true}"
+    @click="$emit('click')"
+  >
+    <cz-icon v-if="loading" class="loading icon" name="loading"></cz-icon>
+    <cz-icon v-if="!loading" :name="icon"></cz-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -10,6 +15,10 @@
 export default {
   props:{
     icon:{},
+    loading:{
+      type:Boolean,
+      default:false,
+    },
     iconPosition:{
       type:String,
       default:'left',
@@ -22,6 +31,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@keyframes spin{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
 .cz-button {
   font: inherit;
   padding: 0 .7em;
@@ -58,6 +75,9 @@ export default {
       margin-left: .1em;
       margin-right: 0;
     }
+  }
+  .loading{
+    animation:spin 2s infinite linear;
   }
 }
 </style>

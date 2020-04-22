@@ -6,5 +6,8 @@ Vue.component('cz-button', Button);
 Vue.component('cz-icon', Icon);
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    data:{
+        loading1:false,
+    }
 })
