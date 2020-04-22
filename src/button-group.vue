@@ -5,7 +5,14 @@
 </template>
 <script>
 export default {
-    
+    mounted(){
+        for(let node of this.$el.children){
+            const name = node.nodeName.toLowerCase();
+            if(name !== 'button'){
+                console.warn(`cz-button-group组件的子元素应全为cz-button,但是你的子元素存在${name}`)
+            }
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
