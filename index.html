@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cz-ui</title>
     <style>
-        *{ margin: 0;padding: 0;box-sizing: border-box; }
-        #app{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #app {
             margin: 20px;
         }
-        :root{
-            --button-height:32px;
-            --font-size:14px;
-            --button-bg:white;
-            --button-active-bg:#eee;
-            --color:#333;
-            --border-radius:4px;
-            --border-color:#999;
-            --border-hover-color:#666;
+
+        :root {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: #eee;
+            --color: #333;
+            --border-radius: 4px;
+            --border-color: #999;
+            --border-hover-color: #666;
         }
     </style>
 </head>
+
 <body>
     <div id="app">
-        <cz-button></cz-button>
+        <cz-button>
+            按钮
+        </cz-button>
+        <cz-button icon="settings" icon-position="left">
+            按钮
+        </cz-button>
+        <cz-button icon="settings" icon-position="right">
+            按钮
+        </cz-button>
     </div>
 </body>
+<script src="//at.alicdn.com/t/font_1774210_zji0b9e9kz9.js"></script>
 <script src="./src/app.js"></script>
+
 </html>

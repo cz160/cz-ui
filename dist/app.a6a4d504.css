@@ -1,10 +1,14 @@
 .cz-button[data-v-0bb581] {
   font: inherit;
-  padding: 0 1em;
+  padding: 0 0.7em;
   height: var(--button-height);
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  display: inline-flex;
+  vertical-align: top;
+  justify-content: center;
+  align-items: center;
 }
 .cz-button[data-v-0bb581]:hover {
   border-color: var(--border-hover-color);
@@ -14,4 +18,26 @@
 }
 .cz-button[data-v-0bb581]:focus {
   outline: none;
+}
+.cz-button > .content[data-v-0bb581] {
+  order: 2;
+}
+.cz-button > .icon[data-v-0bb581] {
+  order: 1;
+  margin-right: 0.1em;
+}
+.cz-button.icon-right > .content[data-v-0bb581] {
+  order: 1;
+}
+.cz-button.icon-right > .icon[data-v-0bb581] {
+  order: 2;
+  margin-left: 0.1em;
+  margin-right: 0;
+}
+.icon[data-v-885966] {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
