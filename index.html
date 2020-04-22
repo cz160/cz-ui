@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cz-ui</title>
     <style>
-        *{margin: 0;padding: 0;box-sizing: border-box;}
+        *{ margin: 0;padding: 0;box-sizing: border-box; }
         #app{
             margin: 20px;
         }
@@ -20,36 +20,11 @@
             --border-hover-color:#666;
         }
     </style>
-    <style>
-        .cz-button{
-            font:inherit;
-            padding: 0 1em;
-            height: var(--button-height);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-        }
-        .cz-button:hover{
-            border-color: var(--border-hover-color);
-        }
-        .cz-button:active{
-            background: var(--button-active-bg);
-        }
-        .cz-button:focus{
-            outline: none;
-        }
-    </style>
 </head>
 <body>
     <div id="app">
         <cz-button></cz-button>
     </div>
 </body>
-<script src="./node_modules/vue/dist/vue.min.js"></script>
-<script src="./button.js"></script>
-<script>
-    var vm = new Vue({
-        el:"#app"
-    })
-</script>
+<script src="./src/app.js"></script>
 </html>

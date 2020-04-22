@@ -1,0 +1,17 @@
+.cz-button[data-v-0bb581] {
+  font: inherit;
+  padding: 0 1em;
+  height: var(--button-height);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--button-bg);
+}
+.cz-button[data-v-0bb581]:hover {
+  border-color: var(--border-hover-color);
+}
+.cz-button[data-v-0bb581]:active {
+  background: var(--button-active-bg);
+}
+.cz-button[data-v-0bb581]:focus {
+  outline: none;
+}
