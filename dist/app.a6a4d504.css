@@ -51,6 +51,8 @@
 }
 .button-group > .cz-button[data-v-6884b8] {
   border-radius: 0;
+}
+.button-group > .cz-button[data-v-6884b8]:not(:first-child) {
   margin-left: -1px;
 }
 .button-group > .cz-button[data-v-6884b8]:first-child {
