@@ -15,8 +15,7 @@
             margin: 20px;
         }
         #app>h2{
-            margin-bottom: 10px;
-            margin-top: 20px;
+            margin: 10px 0;
         }
 
         :root {
@@ -53,8 +52,8 @@
         </cz-button-group>
         <h2>输入框</h2>
         <cz-input type="text" placeholder="请输入关键字" @change="inputChange" v-model="inputValue"></cz-input>
-        <p>{{inputValue}}</p>
         <cz-button @click="upDataInputValue">修改input的值</cz-button>
+        <p>当前输入框的值为:{{inputValue}}</p>
         <br>
         <cz-input type="text" placeholder="请输入关键字" value="禁用状态" disabled=""></cz-input>
         <cz-input type="text" placeholder="请输入关键字" value="只读状态" readonly=""></cz-input>

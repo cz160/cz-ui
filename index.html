@@ -16,8 +16,7 @@
             margin: 20px;
         }
         #app>h2{
-            margin-bottom: 10px;
-            margin-top: 20px;
+            margin: 10px 0;
         }
 
         :root {
@@ -60,8 +59,8 @@
           @change="inputChange"
           v-model="inputValue"
         ></cz-input>
-        <p>{{inputValue}}</p>
         <cz-button @click="upDataInputValue">修改input的值</cz-button>
+        <p>当前输入框的值为:{{inputValue}}</p>
         <br/>
         <cz-input 
           type="text" 
