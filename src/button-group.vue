@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+    name:'cz-button-group',
     mounted(){
         for(let node of this.$el.children){
             const name = node.nodeName.toLowerCase();

@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name:'cz-icon',
     props:['name']
 };
 </script>

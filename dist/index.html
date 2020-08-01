@@ -14,6 +14,10 @@
         #app {
             margin: 20px;
         }
+        #app>h2{
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
 
         :root {
             --button-height: 32px;
@@ -29,8 +33,9 @@
 
 <body>
     <div id="app">
+        <h2>按钮</h2>
         <cz-button :loading="loading1" @click="loading1 = !loading1">
-            按钮
+            点击loading按钮
         </cz-button>
         <cz-button :loading="true" icon="settings" icon-position="left">
             按钮
@@ -46,6 +51,10 @@
                 下一页
             </cz-button>
         </cz-button-group>
+        <h2>输入框</h2>
+        <cz-input type="text" placeholder="请输入关键字" value="正常状态"></cz-input>
+        <cz-input type="text" placeholder="请输入关键字" value="禁用状态" disabled=""></cz-input>
+        <cz-input type="text" placeholder="请输入关键字" value="只读状态" readonly=""></cz-input>
     </div>
 </body>
 <script src="//at.alicdn.com/t/font_1774210_9o3nj372hi7.js"></script>
