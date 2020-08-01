@@ -52,7 +52,10 @@
             </cz-button>
         </cz-button-group>
         <h2>输入框</h2>
-        <cz-input type="text" placeholder="请输入关键字" value="正常状态"></cz-input>
+        <cz-input type="text" placeholder="请输入关键字" @change="inputChange" v-model="inputValue"></cz-input>
+        <p>{{inputValue}}</p>
+        <cz-button @click="upDataInputValue">修改input的值</cz-button>
+        <br>
         <cz-input type="text" placeholder="请输入关键字" value="禁用状态" disabled=""></cz-input>
         <cz-input type="text" placeholder="请输入关键字" value="只读状态" readonly=""></cz-input>
     </div>

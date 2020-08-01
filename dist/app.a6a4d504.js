@@ -12718,6 +12718,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   name: 'cz-input',
   components: {
@@ -12758,7 +12762,21 @@ exports.default = _default;
         disabled: _vm.disabled,
         readonly: _vm.readonly
       },
-      domProps: { value: _vm.value }
+      domProps: { value: _vm.value },
+      on: {
+        change: function($event) {
+          return _vm.$emit("change", $event.target.value)
+        },
+        input: function($event) {
+          return _vm.$emit("input", $event.target.value)
+        },
+        focus: function($event) {
+          return _vm.$emit("focus", $event.target.value)
+        },
+        blur: function($event) {
+          return _vm.$emit("blur", $event.target.value)
+        }
+      }
     })
   ])
 }
@@ -12821,7 +12839,16 @@ _vue.default.component('cz-input', _input.default);
 new _vue.default({
   el: '#app',
   data: {
-    loading1: false
+    loading1: false,
+    inputValue: ''
+  },
+  methods: {
+    inputChange: function inputChange(e) {
+      console.log('222', e);
+    },
+    upDataInputValue: function upDataInputValue() {
+      this.inputValue = '我被修改辣';
+    }
   }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./button-group":"src/button-group.vue","./icon":"src/icon.vue","./input":"src/input.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

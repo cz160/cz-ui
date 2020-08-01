@@ -13,5 +13,14 @@ new Vue({
     el: '#app',
     data:{
         loading1:false,
+        inputValue:'',
+    },
+    methods:{
+        inputChange(e){
+            console.log('222',e);
+        },
+        upDataInputValue(){
+            this.inputValue = '我被修改辣';
+        }
     }
 })

@@ -57,8 +57,12 @@
         <cz-input 
           type="text" 
           placeholder="请输入关键字"
-          value="正常状态"
+          @change="inputChange"
+          v-model="inputValue"
         ></cz-input>
+        <p>{{inputValue}}</p>
+        <cz-button @click="upDataInputValue">修改input的值</cz-button>
+        <br/>
         <cz-input 
           type="text" 
           placeholder="请输入关键字"
