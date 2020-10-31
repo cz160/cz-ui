@@ -10,6 +10,7 @@
 <style lang="scss" scoped>
 .row {
   display: flex;
+  flex-wrap: wrap;
   &.justify-start{
     justify-content: flex-start;
   }
@@ -18,10 +19,6 @@
   }
    &.justify-center{
     justify-content: center;
-  }
-  // 响应式
-  @media screen {
-    
   }
 }
 </style>

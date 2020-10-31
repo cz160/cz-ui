@@ -35,7 +35,7 @@
       }
     }
   }
-  @media (min-width: 577px) and (max-width: 768px) {
+  @media (min-width: 577px){
     // 平板
     $class-prefix: ipad-col-;
     @for $n from 1 through 24 {
@@ -50,7 +50,7 @@
       }
     }
   }
-  @media (min-width: 769px) and (max-width: 992px) {
+  @media (min-width: 769px){
     // 窄pc
     $class-prefix: narrowPc-col-;
     @for $n from 1 through 24 {
@@ -65,7 +65,7 @@
       }
     }
   }
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 993px){
     // pc
     $class-prefix: pc-col-;
     @for $n from 1 through 24 {
