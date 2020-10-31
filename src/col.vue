@@ -9,9 +9,6 @@
 <style lang="scss" scoped>
 .col {
   width: 50%;
-  height: 50px;
-  background: skyblue;
-  
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
