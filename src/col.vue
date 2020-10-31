@@ -1,32 +1,57 @@
 <template>
-    <div class="col" :class="[`col-${span}`]">
-        <slot></slot>
-    </div>
+  <div
+    :class="colClass"
+    :style="colStyle"
+  >
+      <slot></slot>
+  </div>
 </template>
 <style lang="scss" scoped>
-.col{
-    height: 100px;
-    background: grey;
-    width: 50%;
-    border: 1px solid red;
-
-    $class-prefix: col-;
-
-    @for $n from 1 through 24{
-        &.#{$class-prefix}#{$n}{
-            width: ($n / 24) * 100%;
-            background-color: darken(cornflowerblue, 0% + ($n / 2));
-        }
+.col {
+  width: 50%;
+  height: 50px;
+  background: skyblue;
+  
+  $class-prefix: col-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      width: ($n / 24) * 100%;
     }
+  }
+  $class-prefix: offset-;
+  @for $n from 1 through 24 {
+    &.#{$class-prefix}#{$n} {
+      margin-left: ($n / 24) * 100%;
+    }
+  }
 }
 </style>
 <script>
 export default {
-    name:'cz-col',
-    props:{
-        span: {
-            type: [String,Number]
-        },
-    }
-}
+  name: "cz-col",
+  props: {
+    span: {
+      type: [String, Number],
+    },
+    offset: {
+      type: [String, Number],
+    },
+  },
+  data() {
+    return {
+      gutter: 0,
+    };
+  },
+  computed: {
+    colStyle() {
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRigth: this.gutter / 2 + "px",
+      };
+    },
+    colClass() {
+      return [`col col-${this.span} offset && offset-${this.offset}`];
+    },
+  },
+};
 </script>
