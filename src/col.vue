@@ -1,12 +1,10 @@
 <template>
-  <div :class="colClass" :style="colStyle">
+  <div :class="['col',colClass]" :style="colStyle">
     <slot></slot>
   </div>
 </template>
 <style lang="scss" scoped>
 .col {
-  width: 50%;
-
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
@@ -22,13 +20,13 @@
 
   @media (max-width: 576px) {
     // 手机
-    $class-prefix: phone-col-;
+    $class-prefix: col-phone-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: phone-offset-;
+    $class-prefix: offset-phone-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -37,13 +35,13 @@
   }
   @media (min-width: 577px){
     // 平板
-    $class-prefix: ipad-col-;
+    $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: ipad-offset-;
+    $class-prefix: offset-ipad-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -52,13 +50,13 @@
   }
   @media (min-width: 769px){
     // 窄pc
-    $class-prefix: narrowPc-col-;
+    $class-prefix: col-narrowPc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: narrowPc-offset-;
+    $class-prefix: offset-narrowPc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -67,13 +65,13 @@
   }
   @media (min-width: 993px){
     // pc
-    $class-prefix: pc-col-;
+    $class-prefix: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: pc-offset-;
+    $class-prefix: offset-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -82,13 +80,13 @@
   }
   @media (min-width: 1200px) {
     // 宽pc
-    $class-prefix: widePc-col-;
+    $class-prefix: col-widePc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: widePc-offset-;
+    $class-prefix: offset-widePc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
@@ -103,7 +101,7 @@ const validator = (value,name) => {
     return ['span','offset'].includes(key);
   })
   if(!isPass){
-    
+    console.error(`${name}属性只支持sapn offset属性`)
   }
   return isPass;
 }
@@ -142,6 +140,15 @@ export default {
       gutter: 0,
     };
   },
+  methods:{
+    createClasses(value,name=""){
+      let array = [];
+      if(!value) return [];
+      if(value.span){ array.push(`col-${name}${value.span}`) }
+      if(value.offset){ array.push(`offset-${name}-${value.offset}`) }  
+      return array;
+    }
+  },
   computed: {
     colStyle() {
       return {
@@ -151,19 +158,14 @@ export default {
     },
     colClass() {
       const { span,offset,phone,ipad,narrowPc,pc,widePc } = this;
+      const createClasses = this.createClasses;
       return [
-        `col col-${span}`,
-        offset && `offset-${offset}`,
-        phone.span && `phone-col-${phone.span}`, 
-        phone.offset && `phone-col-${phone.offset}`, 
-        ipad.span && `ipad-col-${ipad.span}`, 
-        ipad.offset && `ipad-col-${ipad.offset}`, 
-        narrowPc.span && `narrowPc-col-${narrowPc.span}`, 
-        narrowPc.offset && `narrowPc-col-${narrowPc.offset}`, 
-        pc.span && `pc-col-${pc.span}`, 
-        pc.offset && `pc-col-${pc.offset}`, 
-        widePc.span && `widePc-col-${widePc.span}`, 
-        widePc.offset && `widePc-col-${widePc.offset}`, 
+        ...createClasses({ span,offset }),
+        ...createClasses(phone,'phone-'),
+        ...createClasses(ipad,'ipad-'),
+        ...createClasses(narrowPc,'narrowPc-'),
+        ...createClasses(pc,'pc-'),
+        ...createClasses(widePc,'widePc-'),
       ];
     },
   },
