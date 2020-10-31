@@ -19,6 +19,10 @@
    &.justify-center{
     justify-content: center;
   }
+  // 响应式
+  @media screen {
+    
+  }
 }
 </style>
 <script>
