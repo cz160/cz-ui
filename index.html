@@ -36,31 +36,16 @@
     .col{
         height: 40px;
         border: 1px solid skyblue;
-        background: tomato;
+        background: #0092ff;
     }
 </style>
 <body>
     <div id="app">
         <h2>网格系统</h2>
-        <cz-row gutter="50" style="margin-bottom: 24px;">
-            <cz-col class="col">1</cz-col>
-            <cz-col class="col">2</cz-col>
-            <cz-col class="col">3</cz-col>
-            <cz-col class="col">4</cz-col>
-        </cz-row>
-        <cz-row gutter="50" style="margin-bottom: 24px;">
-            <cz-col class="col">1</cz-col>
-            <cz-col class="col">2</cz-col>
-            <cz-col class="col">3</cz-col>
-        </cz-row>
-        <cz-row gutter="50" style="margin-bottom: 24px;">
-            <cz-col class="col">1</cz-col>
-            <cz-col class="col">2</cz-col>
-        </cz-row>
-        <cz-row style="margin-bottom: 24px;">
-            <cz-col span="8">1</cz-col>
-            <cz-col span="7" offset="1">2</cz-col>
-            <cz-col span="7" offset="1">3</cz-col>
+        <cz-row justify="start" style="margin-bottom: 24px;">
+            <cz-col span="8">你好啊</cz-col>
+            <cz-col span="8">2</cz-col>
+            <cz-col span="8">3</cz-col>
         </cz-row>
         <h2>按钮</h2>
         <cz-button :loading="loading1" @click="loading1 = !loading1">
