@@ -103,7 +103,7 @@ const validator = (value,name) => {
     return ['span','offset'].includes(key);
   })
   if(!isPass){
-    console.error(`${name}属性只能传入span和offset`)
+    
   }
   return isPass;
 }
@@ -151,7 +151,6 @@ export default {
     },
     colClass() {
       const { span,offset,phone,ipad,narrowPc,pc,widePc } = this;
-      console.log(narrowPc)
       return [
         `col col-${span}`,
         offset && `offset-${offset}`,
