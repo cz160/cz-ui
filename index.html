@@ -13,7 +13,7 @@
         }
 
         #app {
-            margin: 20px;
+            /* margin: 20px; */
         }
 
         #app>h2 {
@@ -38,9 +38,54 @@
         border: 1px solid skyblue;
         background: #0092ff;
     }
+    .header{
+        background: #999999;
+        height: 100px;
+    }
+    .content{
+        background: #eeeeee;
+    }
+    .footer{
+        background: #cccccc;
+        height: 50px;
+    }
+    .sider{
+        background: #333;
+        width: 150px;
+    }
 </style>
 <body>
     <div id="app">
+        <h2>布局组件</h2>
+        <cz-layout style="height: 500px;margin-bottom: 24px;">
+            <cz-header>头部</cz-header>
+            <cz-content>身体</cz-content>
+            <cz-footer>尾部</cz-footer>
+        </cz-layout>
+        <cz-layout style="height: 500px;margin-bottom: 24px;">
+            <cz-header>头部</cz-header>
+            <cz-layout>
+                <cz-sider>侧边栏</cz-sider>
+                <cz-content>身体</cz-content>
+            </cz-layout>
+            <cz-footer>尾部</cz-footer>
+        </cz-layout>
+        <cz-layout style="height: 500px;margin-bottom: 24px;">
+            <cz-header>头部</cz-header>
+            <cz-layout>
+                <cz-content>身体</cz-content>
+                <cz-sider>侧边栏</cz-sider>
+            </cz-layout>
+            <cz-footer>尾部</cz-footer>
+        </cz-layout>
+        <cz-layout style="height: 500px;margin-bottom: 24px;">
+            <cz-sider>侧边栏</cz-sider>
+            <cz-layout>
+                <cz-header>头部</cz-header>
+                <cz-content>身体</cz-content>
+                <cz-footer>尾部</cz-footer>
+            </cz-layout>
+        </cz-layout>
         <h2>网格系统</h2>
         <cz-row justify="start">
             <cz-col 
