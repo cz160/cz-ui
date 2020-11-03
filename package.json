@@ -7,10 +7,12 @@
   "author": "竹合",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html --no-cache"
+    "start": "parcel index.html --no-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
@@ -18,7 +20,8 @@
     "chai": "^4.2.0",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.7.1"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
