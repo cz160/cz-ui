@@ -10,6 +10,7 @@ import Header from './header';
 import Content from './content';
 import Footer from './footer';
 import Sider from './sider';
+import Plugin from './plugin';
 
 Vue.component('cz-button-group', ButtonGroup);
 Vue.component('cz-button', Button);
@@ -22,6 +23,7 @@ Vue.component('cz-content', Content);
 Vue.component('cz-header', Header);
 Vue.component('cz-footer', Footer);
 Vue.component('cz-sider', Sider);
+Vue.use(Plugin);
 
 new Vue({
     el: '#app',
@@ -35,6 +37,9 @@ new Vue({
         },
         upDataInputValue(){
             this.inputValue = '我被修改辣';
+        },
+        showToast(){
+            this.$toast('我是message')
         }
     }
 })
