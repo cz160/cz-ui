@@ -10,6 +10,8 @@ import Header from './header';
 import Content from './content';
 import Footer from './footer';
 import Sider from './sider';
+import Tabs from './tabs';
+import TabPane from './TabPane';
 
 Vue.component('cz-button-group', ButtonGroup);
 Vue.component('cz-button', Button);
@@ -22,6 +24,8 @@ Vue.component('cz-content', Content);
 Vue.component('cz-header', Header);
 Vue.component('cz-footer', Footer);
 Vue.component('cz-sider', Sider);
+Vue.component('cz-tabs', Tabs);
+Vue.component('cz-tabpane', TabPane);
 
 new Vue({
     el: '#app',

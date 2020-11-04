@@ -13,7 +13,7 @@
         }
 
         #app {
-            /* margin: 20px; */
+            margin: 20px;
         }
 
         #app>h2 {
@@ -42,9 +42,6 @@
         background: #999999;
         height: 100px;
     }
-    .content{
-        background: #eeeeee;
-    }
     .footer{
         background: #cccccc;
         height: 50px;
@@ -56,6 +53,18 @@
 </style>
 <body>
     <div id="app">
+        <h2>tab组件</h2>
+        <cz-tabs>
+            <cz-tabpane :tab="1" :tabKey="1">
+                content1
+            </cz-tabpane>
+            <cz-tabpane :tab="2" :tabKey="2">
+                content2
+            </cz-tabpane>
+            <cz-tabpane :tab="3" :tabKey="3">
+                content3
+            </cz-tabpane>
+        </cz-tabs>
         <h2>布局组件</h2>
         <cz-layout style="height: 500px;margin-bottom: 24px;">
             <cz-header>头部</cz-header>
